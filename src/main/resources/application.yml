@@ -15,7 +15,7 @@ spring:
       dialect: org.hibernate.dialect.PostgreSQL10Dialect
 
   flyway:
-    locations: "classpath:db.migrations"
+    locations: "classpath:db.migration"
     url: jdbc:postgresql://localhost:5432/postgres
     user: postgres
     password: root

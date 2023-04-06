@@ -1,10 +1,10 @@
 create table personal (
     id bigserial primary key,
-    first_name varchar(255) not null,
-    last_name varchar(255) not null,
-    middle_name varchar(255),
-    name varchar(255),
-    name_name varchar(255),
+    surname varchar(255) not null,
+    name varchar(255) not null,
+    patronymic varchar(255),
+    full_name varchar(255),
+    name_lat varchar(255),
     birthday date
 );
 
@@ -34,7 +34,7 @@ create table documents_types (
 create table documents (
     id bigserial primary key,
     pers_id bigint references personal(id),
-    document_id references documents_types(id) not null,
+    document_id bigint references documents_types(id) not null,
     number varchar(255),
     date_from date,
     date_to date,

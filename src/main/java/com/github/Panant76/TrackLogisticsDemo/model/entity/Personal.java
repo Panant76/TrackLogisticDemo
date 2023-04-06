@@ -10,6 +10,7 @@ import java.time.LocalDate;
 
 @Data
 @Entity
+@Table(name = "personal")
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
@@ -23,15 +24,15 @@ public class Personal {
     Long id;
 
     @Column(nullable = false)
-    String firstName;
+    String surname;
 
     @Column(nullable = false)
-    String lastName;
+    String name;
 
 
-    String middleName;
+    String patronymic;
 
-    String name;//Сделать заполнение программно
+    String fullName;//Сделать заполнение программно
 
     String nameLat;
 
