@@ -17,8 +17,7 @@ public class PersonalDto {
 
     String patronymic;
 
-    String fullName;
-    String nameLat;
+     String nameLat;
 
     LocalDate birthday;
 }

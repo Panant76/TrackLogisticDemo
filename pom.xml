@@ -128,8 +128,12 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
 
-<!--		<dependency>-->
+        <!--		<dependency>-->
 <!--			<groupId>com.github.Panant76</groupId>-->
 <!--			<artifactId>img2base64</artifactId>-->
 <!--			<version>1.0</version>-->

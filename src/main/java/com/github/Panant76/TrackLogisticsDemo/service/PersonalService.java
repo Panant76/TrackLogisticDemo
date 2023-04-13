@@ -19,11 +19,26 @@ import org.springframework.transaction.annotation.Transactional;
 public class PersonalService {
     PersonalMapper personalMapper;
     PersonalRepository personalRepository;
+
     @Transactional
-    public PersonalDto createPers(PersonalDto personalDto){
+    public PersonalDto createPers(PersonalDto personalDto) {
         Personal personal = personalMapper.toEntity(personalDto);
         log.debug("Входящий запрос на создание объекта персона: {}", personalDto);
+
+        String fName = (personalDto.getSurname()
+                .concat(" ")
+                .concat(str(personal.getName()))
+                .concat(str(personalDto.getPatronymic())));
+
+        personal.setFullName(fName);
         personalRepository.save(personal);
         return personalMapper.toDto(personal);
+    }
+
+    private static String str(String str) {
+        String s = str;
+        char a = s.charAt(0);
+        return String.valueOf(a).concat(". ");
+
     }
 }
