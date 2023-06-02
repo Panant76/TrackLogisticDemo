@@ -27,7 +27,7 @@ public class PersonalService {
 
         String fName = (personalDto.getSurname()
                 .concat(" ")
-                .concat(str(personal.getName()))
+                .concat(str(personalDto.getName()))
                 .concat(str(personalDto.getPatronymic())));
 
         personal.setFullName(fName);
